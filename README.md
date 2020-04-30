@@ -19,7 +19,8 @@ For the frontend contributer of project . Foll this steps
     │     
     │ 
     └──── index.html
-```bash
+    
+```
 
 1. Only work on Public Directory
 
