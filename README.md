@@ -7,6 +7,7 @@ For the frontend contributer of project . Foll this steps
 1. Clone this Project repo
 1. Goto Techedu/public folder Then you will see
 
+```bash
     Public
     │─── css
     │     │       
@@ -18,13 +19,8 @@ For the frontend contributer of project . Foll this steps
     │     
     │ 
     └──── index.html
-
+```bash
 
 1. Only work on Public Directory
-
-
-
-
-
 
 NOte: - This read me files chages in time so keep  checking and 
