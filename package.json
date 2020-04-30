@@ -1,0 +1,23 @@
+{
+  "name": "techedu",
+  "version": "1.0.0",
+  "description": "This is the open source Project for a site where tech experts can teach and give podcast",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nabiin/techedu.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nabiin/techedu/issues"
+  },
+  "homepage": "https://github.com/Nabiin/techedu#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
