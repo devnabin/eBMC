@@ -4,8 +4,8 @@
   "description": "This is the open source Project for a site where tech experts can teach and give podcast",
   "main": "index.js",
   "scripts": {
-    "start": "node src/app.js" ,
-    "dev" : "nodemon src/app -e js,html,css,json"
+    "start": "node src/app.js",
+    "dev": "nodemon src/app -e js,html,css,json"
   },
   "repository": {
     "type": "git",

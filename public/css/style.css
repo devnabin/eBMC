@@ -41,8 +41,6 @@ nav ul input {
 /* main section styling */
 #main-section {
   background-image: url("../images/4474421855_4b20643258_b.jpg");
-   filter: blur(8px);
-  -webkit-filter: blur(8px);
 
   height: 90vh;
   background-repeat: no-repeat;
