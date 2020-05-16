@@ -30,6 +30,8 @@ nav ul li a {
 nav ul input {
   border-radius: 0.8rem;
   height: 1.5rem;
+  outline: none;
+  padding-left: 12;
 }
 
 #search {
@@ -38,7 +40,10 @@ nav ul input {
 
 /* main section styling */
 #main-section {
-  background-image: url("../images/95891082_2648524048801203_226565658077298688_n.png");
+  background-image: url("../images/4474421855_4b20643258_b.jpg");
+   filter: blur(8px);
+  -webkit-filter: blur(8px);
+
   height: 90vh;
   background-repeat: no-repeat;
   background-position: center center;
