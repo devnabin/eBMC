@@ -7,30 +7,10 @@
   font-family: "Noto Sans TC", sans-serif;
 }
 
-/* .bkimg img{
-  background-image: url("../images/4474421855_4b20643258_b.jpg");
-   filter: blur(8px);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  width: 100%;
-  height: 100vh;
-  position: absolute;
-  z-index: -1;
-} 
- */
-
 body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-}
-
-.main-section {
-  flex-grow: 1;
-  font-size: 40px;
-  text-align: center;
-  margin-top: 250px;
 }
 
 nav {
@@ -65,14 +45,22 @@ nav {
   text-align: center;
 }
 
-/* main section styling */
-.main-section {
+/* container and main section styling */
+#container {
   display: flex;
   justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("../images/95891082_2648524048801203_226565658077298688_n.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
 }
 
-/* footer */
-footer {
-  text-align: center;
-  box-shadow: 1px 1px 5px black;
+#container .main-section {
+  color: white;
+  font-size: 30px;
+  line-height: 5.2rem;
+  padding-bottom: 10px;
+  padding-right: 10px;
 }
