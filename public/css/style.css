@@ -64,3 +64,9 @@ nav {
   padding-bottom: 10px;
   padding-right: 10px;
 }
+
+/* footer */
+footer {
+  text-align: center;
+  box-shadow: 1px 1px 5px black;
+}
