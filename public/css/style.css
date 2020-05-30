@@ -1,77 +1,72 @@
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap");
 /* Universal Styling and  css reset */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  color: black;
+  font-family: "Noto Sans TC", sans-serif;
 }
 
-/* navbar styling */
-nav {
-  padding-top: 1.3rem;
-  background-color: black;
-  height: 4rem;
-  padding-left: 4.5rem;
-}
-
-nav ul {
+body {
+  min-height: 100vh;
   display: flex;
-  flex-wrap: wrap;
-  font-family: "Roboto", sans-serif;
+  flex-direction: column;
 }
-/* nav ul li {
-} */
 
-nav ul li a {
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  box-shadow: 1px 1px 5px black;
+  padding: 20px;
+}
+
+.navlinks a {
   text-decoration: none;
-  color: white;
-  padding: 2rem;
+  margin-left: 26px;
+  font-size: 20px;
 }
 
-nav ul input {
-  border-radius: 0.8rem;
-  height: 1.5rem;
+/* search nav */
+.search {
+  /* margin-top: 50px; */
+  display: flex;
+  border-bottom: 1px solid black;
+}
+.search button {
+  background-color: transparent;
+  border: none;
   outline: none;
-  padding-left: 12;
+}
+.search input {
+  border: none;
+  outline: none;
+}
+.search input::placeholder {
+  text-align: center;
 }
 
-#search {
-  padding-left: 4.5rem;
-}
-
-/* main section styling */
-#main-section {
-  background-image: url("../images/4474421855_4b20643258_b.jpg");
-   filter: blur(8px);
-  -webkit-filter: blur(8px);
-
-  height: 90vh;
+/* container and main section styling */
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("../images/95891082_2648524048801203_226565658077298688_n.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+}
+
+#container .main-section {
   color: white;
+  font-size: 35px;
+  line-height: 5.2rem;
+  padding-bottom: 50px;
+  padding-right: 290px;
+}
+
+/* footer */
+footer {
   text-align: center;
-  /* opacity: 0.9; */
-}
-
-#main-section #first-title {
-  padding-top: 5rem;
-  padding-right: 15.5rem;
-  font-size: 2.5rem;
-  font-family: sans-serif;
-}
-
-#main-section #second-title {
-  padding-top: 5rem;
-  padding-right: 15.5rem;
-  font-size: 2.5rem;
-  font-family: sans-serif;
-}
-
-/* search button styling */
-#search-button {
-  height: 35px;
-  width: 35px;
-  margin-left: 1.5rem;
-  opacity: 0.4;
-  background-color: white;
+  box-shadow: 1px 1px 5px black;
 }
