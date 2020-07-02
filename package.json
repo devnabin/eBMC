@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/app.js",
-    "dev": "nodemon src/app -e js,html,css,json"
+    "dev": "./node_modules/.bin/env-cmd -f ./config/dev.env nodemon src/app -e js,html,css,json"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Nabiin/techedu#readme",
   "dependencies": {
+    "env-cmd": "^10.1.0",
     "express": "^4.17.1"
   },
   "devDependencies": {
