@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,800&display=swap");
+
+/* defaults start */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 10px;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+}
+p,
+a {
+  font-size: 1.2rem;
+}
+
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+/* default btn class for letter uppercase and default color for fallbacks */
+.btn {
+  /* inline-block for margin to operate */
+  display: inline-block;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 1rem 5rem;
+  border-radius: 200px;
+}
+/* defaults end */
+
+
+/* SIGNUP/SIGNIN PAGE */
+
+/* fallback height for signup page and form page */
+#form-page {
+  height: 100vh;
+}
+
+/* main container for the form box */
+.form-container {
+  height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* welcome box */
+.welcome-box {
+  height: 100vh;
+  background: linear-gradient(to right, #6894fd 0%, #7d63e8 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  width: 40%;
+}
+.welcome-box-wrapper {
+  width: 70%;
+  color: #fff;
+}
+.welcome-box-wrapper h1,
+p,
+a {
+  margin: 2rem 0;
+}
+.welcome-title {
+  font-size: 5rem;
+}
+.welcome-detail {
+  
+  font-size: 2rem;
+}
+.signin-btn {
+  /* margin-top 1 rem as padding covered the space previously added, to maintain a consistent margin  */
+  margin-top: 1rem;
+  border: 1px solid #fff;
+  transition: color .2s ease;
+  transition: background-color .2s ease;
+}
+.signin-btn:hover{
+  color:#6894fd;
+  background-color: #fff;
+}
+
+/* signup box / formbox */
+.form-box {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 60%;
+}
+
+.form-box-title{
+  text-align: center;
+  padding: 0 1rem;
+  font-size: 5rem;
+  color: #6894fd;
+}
+.social-login{
+display: flex;
+
+}
+.social-login img{
+  margin: 1rem;
+}
+.social-images{
+  width: 4rem;
+}
+.email-login-text{
+  font-size: 1.2rem;
+  color: #333333;
+}
+
+.form-data input{
+  width: 35rem;
+  height: 4rem;
+  background-color: #f3f3f3;
+  margin: 1rem 0;
+  border: none;
+  border-radius: 100px;
+  padding: 0.4rem 1.9rem;
+  outline: none;
+  transition: box-shadow,transform .3s ease;
+}
+.form-data input:hover,:focus{
+  box-shadow: 0px 3px 10px 0px #00000049;
+  transform: scale(1.1);
+}
+input::placeholder{
+  color: #727272;
+}
+.signup-btn{
+background-color: #7d63e8;
+transition: box-shadow .6s ease;
+}
+.signup-btn:hover{
+  box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.514);
+}
+
+/* responsive mobile design  */
+@media only screen and (max-width: 750px){
+  .form-container {
+    height:auto;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  .welcome-box {
+    padding: 1rem;
+    height: 40%;
+    width: 100%;
+    background: linear-gradient(to right, #6895fdc0 0%, #7e63e8da 100%);
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .form-box {
+    height: auto;
+    margin:6rem 1rem 0rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .welcome-title{
+    text-align: center;
+  }
+}
+/* END SIGNUP and SIGNIN PAGE */
