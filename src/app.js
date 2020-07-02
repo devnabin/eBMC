@@ -12,7 +12,8 @@ const pageRendringRoute = require('./routers/pageRender')
 
 //Paths
 const publicPath = path.join(__dirname , '../public')
-const templates = path.join(__dirname , '../templates')
+const viewsPath = path.join(__dirname , '../templates/views')
+const partialsPath = path.join(__dirname , '../templates/partials')
 
 
 const app = express()
@@ -22,9 +23,11 @@ const app = express()
 app.use(express.static(publicPath)) //for static files only
 
 
-//handles bar set up
+//handles bar set up , setup engines
 app.set('view engine', 'hbs'); //for hbs
-app.set("views", templates);  //for custome hbs path 
+app.set("views", viewsPath);  //for custome hbs path 
+hbs.registerPartials(partialsPath); //for partials
+
 
 
 //parsing body data
