@@ -20,7 +20,8 @@
   "homepage": "https://github.com/Nabiin/techedu#readme",
   "dependencies": {
     "env-cmd": "^10.1.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "hbs": "^4.1.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
