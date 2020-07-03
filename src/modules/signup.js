@@ -14,12 +14,23 @@ const signup = async (req, res, next) => {
       throw new error();
     }
 
+    if (req.body.name) {
+      const name = req.body.name.split(" ");
+      if (name.length < 2) {
+        getdata = "Please Enter Your First Name and Last name";
+        throw new error();
+      } else if (name[1] == "") {
+        getdata = "Please Enter Your Correct name";
+        throw new error();
+      }
+    }
+
     if (req.body["first-password"] !== req.body["second-password"]) {
-      getdata = "First and Second Password aren't same";
+      getdata = "First password and Second Password aren't same";
       throw new error();
     }
 
-    next();
+    // next();
   } catch (error) {
     res.status(404).send({ error: `${getdata}` });
   }
