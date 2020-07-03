@@ -1,12 +1,18 @@
 const express = require('express')
 const router =  express.Router()
+const signupValidation = require('../modules/signup')
 
 //post register
-router.post('/register' ,(req,res)=>{
-    console.log("done " ,req.body)
-    res.send('ok')
+router.post('/register', signupValidation ,(req,res)=>{
+    res.send(req.body)
 })
 
+
+
+//post login
+router.post('/login' ,(req,res)=>{
+    res.send(req.body)
+})
 
 
 

@@ -8,12 +8,12 @@ router.get('', (req,res)=>{
 
 //login
 router.get('/login' , (req,res)=>{
-    res.render('login')
+    res.render('signin')
 })
 
 //register
 router.get('/register' , (req,res)=>{
-    res.render('register')
+    res.render('signup')
 })
 
 //404
