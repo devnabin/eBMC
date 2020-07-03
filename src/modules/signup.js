@@ -30,7 +30,7 @@ const signup = async (req, res, next) => {
       throw new error();
     }
 
-    // next();
+    next();
   } catch (error) {
     res.status(404).send({ error: `${getdata}` });
   }

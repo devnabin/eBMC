@@ -21,7 +21,8 @@
   "dependencies": {
     "env-cmd": "^10.1.0",
     "express": "^4.17.1",
-    "hbs": "^4.1.1"
+    "hbs": "^4.1.1",
+    "mongoose": "^5.9.21"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"

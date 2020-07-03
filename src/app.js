@@ -4,9 +4,14 @@ const path = require('path')
 const hbs = require('hbs')
 
 
+//db connection
+require('./database/mongo')
+
 //Routs
 const userloginRoute = require('./routers/userlogin')
 const pageRendringRoute = require('./routers/pageRender')
+const userRoute = require('./routers/user')
+
 
 
 
@@ -37,7 +42,7 @@ app.use(express.json())
 //using routers
 app.use(pageRendringRoute)
 app.use(userloginRoute)
-
+app.use(userRoute)
 
 
 
