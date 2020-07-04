@@ -1,5 +1,9 @@
 # techedu
-This is the open source Project for a site where tech experts can teach and give podcast
+Social Site for eBMCs
+
+
+# Live link
+https://ebmc.herokuapp.com/
 
 
 # Getting Start 
@@ -25,3 +29,28 @@ For the frontend contributer of this (techedu) project . Follow these steps
 1. Only work on Public Directory
 
 NOte: - This read me files chages in time so keep  checking and 
+
+
+# Routs for developer
+
+/validate
+method : 'POST'
+takes : name  , email , first-password and second-password
+
+
+/resendcode
+method : 'POST'
+takes : name  , email , first-password and second-password
+
+
+//register
+method : 'POST'
+takes : name  , email , first-password and second-password
+
+
+/login 
+method : 'POST'
+takes : email and password
+
+
+
