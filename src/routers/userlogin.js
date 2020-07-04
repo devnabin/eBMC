@@ -1,20 +1,58 @@
 const express = require("express");
+const validator = require("validator");
 const router = express.Router();
-
 
 //custome module
 const signupValidation = require("../modules/signup");
-const checkAdmin = require("../modules/check");
-
+const sendCode = require("../modules/sendingCode");
 
 //Models
 const User = require("../database/Models/user");
 
+//validate user info
+router.post("/validate", signupValidation, (req, res) => {
+  const isEmail =  validator.isEmail(req.body.email);
+  if(!isEmail) return res.status(404).send({error : 'This email is not valid'})
+  sendCode(req.body.email , (code)=>{
+    if(code){
+      res.send({code})
+    }else{
+      res.status(300).send()
+    }
+  })
+  // let code;
+  // randomStrings(8, (args) => {
+  //   code = args;
+  // });
+  // if (code) {
+  //   res.send({ code });
+  // } else {
+  //   res.status(300).send({ error: "Server Error" });
+  // }
+});
+
+
+
+//resend Verification code
+router.post("/resendcode",signupValidation, (req, res) => {
+   const isEmail =  validator.isEmail(req.body.email);
+   if(!isEmail) return res.status(404).send({error : 'This email is not valid'})
+   sendCode(req.body.email , (code)=>{
+     if(code){
+       res.send({code})
+     }else{
+       res.status(300).send()
+     }
+   })
+});
+
+
+
 
 //post register
-router.post("/register", signupValidation, async (req, res) => {
+router.post("/register", async (req, res) => {
   try {
-    console.log(req.body);
+    // console.log(req.body);
     let obj = {
       name: req.body.name,
       email: req.body.email,
@@ -22,32 +60,29 @@ router.post("/register", signupValidation, async (req, res) => {
     };
     const user = await User(obj);
     await user.save();
-    res.status(201).send(user);
+    const token = await user.tokenAuth();
+    res.status(201).send({user , token});
   } catch (error) {
     res.status(400).send(error);
   }
 });
 
 
-//delete user if not validate or confirmation
-// delete user by id
-router.delete("/register/:id", checkAdmin ,  async (req, res) => {
+router.post("/login", async (req, res) => {
   try {
-    const user = await User.findByIdAndDelete(req.params.id);
-    if(!user){
-     throw new error()
-    }
-    res.send(user);
+    // console.log(req.body)
+    const user = await User.findbyCredentials(
+      req.body.email,
+      req.body.password
+    );
+    const token = await user.tokenAuth();
+    // const user = userlog.hidedata();  //Old way to hide data
+    res.status(200).send({ user  , token });
   } catch (error) {
-    res.status(404).send(error)
+    res.status(404).send(error);
   }
 });
 
 
-
-//post login
-router.post("/login", (req, res) => {
-  res.send(req.body);
-});
 
 module.exports = router;

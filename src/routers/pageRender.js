@@ -18,7 +18,7 @@ router.get('/register' , (req,res)=>{
 
 //404
 router.get('/*' , (req,res)=>{
-    res.send('404 Not found')
+    res.status(404).send('404 Not found')
 })
 
 
