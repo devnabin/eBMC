@@ -13,7 +13,7 @@ const User = require("../database/Models/user");
 router.post("/validate", signupValidation, (req, res) => {
   const isEmail =  validator.isEmail(req.body.email);
   if(!isEmail) return res.status(404).send({error : 'This email is not valid'})
-  sendCode(req.body.email , (code)=>{
+  sendCode(req.body.email , req.body.name , (code)=>{
     if(code){
       res.send({code})
     }else{
@@ -37,7 +37,7 @@ router.post("/validate", signupValidation, (req, res) => {
 router.post("/resendcode",signupValidation, (req, res) => {
    const isEmail =  validator.isEmail(req.body.email);
    if(!isEmail) return res.status(404).send({error : 'This email is not valid'})
-   sendCode(req.body.email , (code)=>{
+   sendCode(req.body.email , req.body.name ,  (code)=>{
      if(code){
        res.send({code})
      }else{
@@ -50,9 +50,8 @@ router.post("/resendcode",signupValidation, (req, res) => {
 
 
 //post register
-router.post("/register", async (req, res) => {
+router.post("/register", signupValidation , async (req, res) => {
   try {
-    // console.log(req.body);
     let obj = {
       name: req.body.name,
       email: req.body.email,
@@ -70,7 +69,6 @@ router.post("/register", async (req, res) => {
 
 router.post("/login", async (req, res) => {
   try {
-    // console.log(req.body)
     const user = await User.findbyCredentials(
       req.body.email,
       req.body.password

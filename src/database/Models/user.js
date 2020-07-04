@@ -1,5 +1,6 @@
+const bcrypt = require('bcrypt')
 const mongoose = require("mongoose");
-const jwt = require('jsonwebtoken')
+const jwt = require("jsonwebtoken");
 const userSchema = new mongoose.Schema(
   {
     name: {
@@ -59,24 +60,39 @@ const userSchema = new mongoose.Schema(
     timestamps: true,
   }
 );
-//1. jwt for after registration and login 
-userSchema.methods.tokenAuth = async function(){
-  const token = jwt.sign({ _id : this._id.toString()} , process.env.Scode)
-  this.tokens = this.tokens.concat({token})
-  await this.save()
+//1. jwt for after registration and login
+userSchema.methods.tokenAuth = async function () {
+  const token = jwt.sign({ _id: this._id.toString() }, process.env.Scode);
+  this.tokens = this.tokens.concat({ token });
+  await this.save();
   return token;
-}
+};
 
 // 2 .Finding login user
 userSchema.statics.findbyCredentials = async (email, password) => {
   const user = await User.findOne({ email });
-  console.log(user)
-  if (!user) throw new error("Unable to login");
-  //   const isMatch = await bcrypt.compare(password, user.password);
-  //   if (!isMatch) throw new error("unable to login");
+  if (!user) throw new error("Unable to login , User not found");
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) throw new error("unable to login , password is incorrect");
   return user;
 };
 
+// 3. hasing password
+userSchema.pre("save", async function (next) {
+  const user = this;
+  if (user.isModified("password")) {
+    user.password = await bcrypt.hash(this.password, 8);
+  }
+  next();
+});
+
+//4.deleting property before sending
+userSchema.methods.toJSON = function(){
+  const obj = this.toObject();
+  delete obj.password;
+  delete obj.tokens;
+  return obj;
+}
 
 
 const User = mongoose.model("user", userSchema);
