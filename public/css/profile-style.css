@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,800&display=swap");
+
+/* defaults start */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 10px;
+  /* default bg color */
+  background-color: #eeeeee;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+}
+p,
+a {
+  font-size: 1.5rem;
+}
+
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+h1 {
+  font-weight: 3rem;
+}
+h2 {
+  font-weight: 600;
+  font-size: 2.2rem;
+}
+.container {
+  margin: 0 2rem;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 3rem;
+  color: #fff;
+}
+.logo {
+  position: absolute;
+  top: 0.71rem;
+}
+header {
+  height: 7vh;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px -3px 9px rgba(0, 0, 0, 0.116);
+}
+.nav-items {
+  display: flex;
+  justify-content: space-around;
+  overflow: hidden;
+}
+.nav-item {
+  padding: 1.5rem 1rem;
+  margin: 0 1rem;
+  transition: background-color 0.3s ease 0s, color 0.3s ease 0s;
+}
+.nav-item:hover,
+:focus {
+  background-color: #e2e2e2;
+  color: #fff;
+}
+.nav-item a {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+/* profile */
+.profile-items {
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+  border-bottom-left-radius: 4rem;
+  border-bottom-right-radius: 4rem;
+  background: linear-gradient(to right, #6894fd 0%, #7d63e8 100%);
+}
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.profile-image {
+  background-color: red;
+  height: 13rem;
+  width: 13rem;
+  border-radius: 50%;
+  border: 1px solid white;
+  background: url(https://images.pexels.com/photos/1310522/pexels-photo-1310522.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+}
+.profile-name {
+  margin-top: 1rem;
+  color: #fff;
+}
+.follow-items {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  justify-content: space-evenly;
+}
+.follow-item {
+  margin: 0 2rem;
+}
+.follow-item p {
+  font-weight: 500;
+  color: #fff;
+}
+.follow-btn {
+  display: inline-block;
+  padding: 1rem 2.9rem;
+  background-color: #fff;
+  border-radius: 100px;
+}
+.follow-btn p {
+  color: #7d63e8;
+}
+
+section.recent-posts-area {
+  margin: 0 auto;
+  margin-top: 2rem;
+
+  /* height: 100vh; */
+  display: flex;
+  justify-content: center;
+  max-width: 700px;
+  flex-direction: column;
+  text-align: center;
+}
+.posts {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  /* margin: 0.1rem 1.9rem 0; */
+}
+
+.post {
+  background-color: #fff;
+  padding: 2rem 3rem;
+  border-radius: 3rem;
+  margin: 1.6rem 0;
+  transition: box-shadow 0.3s ease;
+}
+.posts li:last-child {
+  /* added a bottom margin to have space for bottom nav in mobile view */
+  margin-bottom: 10vh;
+}
+.post:hover,
+:focus {
+  box-shadow: 0px 0px 10px #0000003b;
+}
+.posted-by-items {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0.4rem;
+  align-items: center;
+}
+.posted-by-image {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  margin-right: 1rem;
+  background: url(https://images.pexels.com/photos/1310522/pexels-photo-1310522.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+}
+.posted-on {
+  font-size: 1.2rem;
+}
+/* post-content */
+.post-content {
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  margin: 1.6rem 0;
+}
+.post-content-text {
+  font-size: 1.4rem;
+}
+.post-content-image {
+  margin-top: 1.6rem;
+  max-width: 400px;
+  max-height: 400px;
+}
+
