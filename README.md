@@ -34,22 +34,30 @@ NOte: - This read me files chages in time so keep  checking and
 # Routs for developer
 
 /validate
+
 method : 'POST'
+
 takes : name  , email , first-password and second-password
 
 
 /resendcode
+
 method : 'POST'
+
 takes : name  , email , first-password and second-password
 
 
 //register
+
 method : 'POST'
+
 takes : name  , email , first-password and second-password
 
 
 /login 
+
 method : 'POST'
+
 takes : email and password
 
 
