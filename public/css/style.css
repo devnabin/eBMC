@@ -65,11 +65,20 @@ a {
   width: 70%;
   color: #fff;
 }
-.welcome-box-wrapper h1,
-p,
-a {
+/* select all the child elements of .welcome-box-wrapper, i.e. h1, p p and a */
+.welcome-box-wrapper, .welcome-box-wrapper>*{
   margin: 2rem 0;
 }
+/* works the same as above margin */
+/* .welcome-box-wrapper h1 {
+  margin: 2rem 0;
+}
+.welcome-box-wrapper p{
+  margin: 2rem 0;
+}
+.welcome-box-wrapper a{
+  margin: 2rem 0;
+} */
 .welcome-title {
   font-size: 5rem;
 }
@@ -176,3 +185,108 @@ transition: box-shadow .6s ease;
   }
 }
 /* END SIGNUP and SIGNIN PAGE */
+
+
+/* OTP PAGE */
+#otp-header{
+  position: absolute;
+  margin: 1.5rem 10rem 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.otp-nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+.go-back{
+  color: #7d63e8;
+  padding: 0.8rem 2.8rem;
+  background-color: #fff;
+  border-radius: 100px;
+  transition: background-color .2s ease, color .2s ease;
+}
+.go-back:hover{
+  background-color: #6733e0;
+  color: #fff;
+}
+.logo{
+  color: #fff;
+  font-weight: 700;
+  font-size: 2rem;
+}
+#otp-page{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #5e38b8;
+  background: linear-gradient(to right, #6895fdc0 0%, #7e63e8da 100%);
+  /* background: linear-gradient(to right, #6895fdc0 0%, #7e63e8da 100%); */
+}
+.otp-container{
+  background-color: rgb(255, 255, 255);
+  margin: 2rem;
+  padding: 5rem 3rem;
+  border-radius: 4rem;
+  transition:  box-shadow .5s;
+}
+.otp-container:hover{
+  box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.534);
+}
+
+.otp-items{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: space-around; */
+  flex-wrap: wrap;
+}
+.otp-item .otp-field{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.form-data .otp-input-form{
+max-width:30rem;
+text-align: center;
+margin-right: 0.6rem;
+}
+.verify-btn{
+  margin-top: 0.1rem;
+  display: inline-block;
+  font-weight: 600;
+  background-color: #6894fd;
+  transition: background-color .3s ease, color .3s ease;
+}
+.verify-btn:hover{
+  color: #fff;
+  background-color: #5e38b8;
+}
+.otp-field input:hover,:focus{
+  box-shadow: none;
+  transform: none;
+}
+.otp-items p{
+  margin-top: 0.4rem;
+  padding: 0.2rem;
+}
+.otp-item .resend-code, .change-email{
+  text-transform: uppercase;
+  
+  font-weight: 600;
+  /* padding: 0.1rem 1rem; */
+}
+.otp-link{
+  color: #6894fd;
+}
+.otp-link:hover{
+  text-decoration: underline;
+}
+/* END OTP-PAGE */
