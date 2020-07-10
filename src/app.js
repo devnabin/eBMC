@@ -40,9 +40,9 @@ app.use(express.json())
 
 
 //using routers
-app.use(pageRendringRoute)
 app.use(userloginRoute)
 app.use(userRoute)
+app.use(pageRendringRoute)
 
 
 
