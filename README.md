@@ -33,24 +33,39 @@ NOte: - This read me files chages in time so keep  checking and
 
 # Routs for developer
 
-/validate
+1. /user/register
+
 method : 'POST'
+
 takes : name  , email , first-password and second-password
 
 
-/resendcode
+1. /user/login 
+
 method : 'POST'
-takes : name  , email , first-password and second-password
 
-
-//register
-method : 'POST'
-takes : name  , email , first-password and second-password
-
-
-/login 
-method : 'POST'
 takes : email and password
+
+
+1. /user/users
+
+method : 'GET'
+
+takes : ❌
+
+
+1. /user/nickname
+
+method : 'GET'
+
+takes : ❌
+
+
+1. /user/nickname
+
+method : 'DELETE'
+
+takes : ❌
 
 
 
