@@ -25,6 +25,15 @@ const signup = async (req, res, next) => {
       }
     }
 
+    if (req.body.email) {
+      if (req.body.email.includes("@") && req.body.email.includes(".")) {
+        let nickname = req.body.email.split("@");
+        req.nickname = nickname[0];
+      } else {
+        getdata = `email is not valid`;
+        throw new error();
+      }
+    }
     if (req.body["first-password"] !== req.body["second-password"]) {
       getdata = "First password and Second Password aren't same";
       throw new error();

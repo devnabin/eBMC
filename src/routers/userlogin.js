@@ -9,51 +9,15 @@ const sendCode = require("../modules/sendingCode");
 //Models
 const User = require("../database/Models/user");
 
-//validate user info
-router.post("/validate", signupValidation, (req, res) => {
-  const isEmail =  validator.isEmail(req.body.email);
-  if(!isEmail) return res.status(404).send({error : 'This email is not valid'})
-  sendCode(req.body.email , req.body.name , (code)=>{
-    if(code){
-      res.send({code})
-    }else{
-      res.status(300).send()
-    }
-  })
-  // let code;
-  // randomStrings(8, (args) => {
-  //   code = args;
-  // });
-  // if (code) {
-  //   res.send({ code });
-  // } else {
-  //   res.status(300).send({ error: "Server Error" });
-  // }
-});
-
-
-
-//resend Verification code
-router.post("/resendcode",signupValidation, (req, res) => {
-   const isEmail =  validator.isEmail(req.body.email);
-   if(!isEmail) return res.status(404).send({error : 'This email is not valid'})
-   sendCode(req.body.email , req.body.name ,  (code)=>{
-     if(code){
-       res.send({code})
-     }else{
-       res.status(300).send()
-     }
-   })
-});
-
-
 
 
 //post register
-router.post("/register", signupValidation , async (req, res) => {
+router.post("/user/register", signupValidation , async (req, res) => {
   try {
+
     let obj = {
       name: req.body.name,
+      nickname : req.nickname,
       email: req.body.email,
       password: req.body["first-password"] || req.body["second-password"],
     };
@@ -80,6 +44,45 @@ router.post("/login", async (req, res) => {
     res.status(404).send(error);
   }
 });
+
+
+
+//validate user info
+// router.post("/validate", signupValidation, (req, res) => {
+//   const isEmail =  validator.isEmail(req.body.email);
+//   if(!isEmail) return res.status(404).send({error : 'This email is not valid'})
+//   sendCode(req.body.email , req.body.name , (code)=>{
+//     if(code){
+//       res.send({code})
+//     }else{
+//       res.status(300).send()
+//     }
+//   })
+//   // let code;
+//   // randomStrings(8, (args) => {
+//   //   code = args;
+//   // });
+//   // if (code) {
+//   //   res.send({ code });
+//   // } else {
+//   //   res.status(300).send({ error: "Server Error" });
+//   // }
+// });
+
+
+
+//resend Verification code
+// router.post("/resendcode",signupValidation, (req, res) => {
+//    const isEmail =  validator.isEmail(req.body.email);
+//    if(!isEmail) return res.status(404).send({error : 'This email is not valid'})
+//    sendCode(req.body.email , req.body.name ,  (code)=>{
+//      if(code){
+//        res.send({code})
+//      }else{
+//        res.status(300).send()
+//      }
+//    })
+// });
 
 
 
