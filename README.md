@@ -33,6 +33,7 @@ NOte: - This read me files chages in time so keep  checking and
 
 # Routs for developer
 
+
 1. /user/register
 
 method : 'POST'
@@ -45,6 +46,7 @@ takes : name  , email , first-password and second-password
 method : 'POST'
 
 takes : email and password
+
 
 
 1. /user/users
@@ -60,6 +62,9 @@ method : 'GET'
 
 takes : ❌
 
+note : /nickname , this nickname should be the nickname of user
+for ex :- user/bibhu
+
 
 1. /user/nickname
 
@@ -67,5 +72,7 @@ method : 'DELETE'
 
 takes : ❌
 
+note : /nickname , this nickname should be the nickname of user
+for ex :- user/bibhu
 
 
