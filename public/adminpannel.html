@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/adminpannel.css" />
+  </head>
+  <body>
+    <!-- container for the whole page -->
+    <div id="container">
+      <!-- menu section of the page -->
+      <div id="intro-section">
+        <h1 class="main-title primary-color center">Admin Panel</h1>
+        <br />
+        <h3 id="intro-message" class="f-size">
+          Hello user you have three messages
+        </h3>
+        <br />
+        <ul id="side-info" class="f-size">
+          <li><a href="#">View the Site</a></li>
+
+          <li><a href="#">Sign Out</a></li>
+        </ul>
+        <br />
+        <br />
+
+        <!-- side menu -->
+        <ul id="menu" class="f-size">
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Settings</a></li>
+          <li><a href="#">Filter Text</a></li>
+          <select name="test" id="text">
+            <option value="Ascending" class="btn">Ascending</option>
+            <option value="Descending" class="btn">Descending</option>
+          </select>
+        </ul>
+      </div>
+
+      <!-- side panel -->
+      <div id="side-panel" class="primary-color">
+        <h1 class="main-title">Welcome User</h1>
+        <br />
+        <h3 class="f-size" id="side-message">
+          What would you like to do?
+        </h3>
+
+
+        <!-- verified and unverified users table styling -->
+        <h3 class="main-title">User Info</h3>
+        <h4 class="f-size v--users" >Verified Users</h3> <br>
+          <table class="v__users-info"> 
+            <th>Name</th>
+            <th>User Name</th>
+            <tr>
+              <td>Laxman</td>
+              <td>Laxman12</td>
+            </tr>
+            <tr>
+              <td>John Doe</td>
+              <td>John.Doe</td>
+            </tr>
+          </table>
+          <br> <br>
+
+          <h4 class="f-size v--users" >Unverified Users</h3> <br>
+            <table class="v__users-info"> 
+              <th>Name</th>
+              <th>User Name</th>
+              <tr>
+                <td>Laxman</td>
+                <td>Laxman12</td>
+              </tr>
+              <tr>
+                <td>John Doe</td>
+                <td>John.Doe</td>
+              </tr>
+            </table>
+          
+      </div>
+    </div> 
+  </body>
+</html>
