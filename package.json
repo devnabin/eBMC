@@ -28,7 +28,7 @@
     "mongoose": "^5.9.21",
     "password-hash": "^1.2.2",
     "randomstring": "^1.1.5",
-    "validator": "^13.1.1"
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
